@@ -1,53 +1,47 @@
 $(document).ready(function() {
-    // get times from moment
+    // get current date and time
     var now = moment().format('dddd MMMM Do, YYYY');
     var nowHour24 = moment().format('H');
     var nowHour12 = moment().format('h');
     
-    // set times to develop from
-    nowHour24 = 13;
-    nowHour12 = 1;
-       
+    // set current date
     var $dateHeading = $('#currentDay');
     $dateHeading.text(now);
     
     // Get stored todos from localStorage
     var storedPlans = JSON.parse(localStorage.getItem("storedPlans"));
     
-    // If plans were retrieved from localStorage, update the plan array to it
+    // Update plans from local storage
     if (storedPlans !== null) {
       planTextArr = storedPlans;
     } else {
       planTextArr = new Array(11);
     }
   
-    // set variable referencing planner element
-    let $plannerDiv = $('#plannerContainer');
+    // Set var referencing planner element
+    let $workScheduleDiv = $('#plannerContainer');
     // clear existing elements
-    $plannerDiv.empty();
+    $workScheduleDiv.empty();
   
-    // build calendar by row for fix set of hours
+    // Build calendar - begin 7am for 12 hours
     var hour = 7
     for (hour = 7; hour <= 18; hour++) {
       // index for array use offset from hour
       let index = hour - 7;
       
-      // build row components
+      // build row for each hour
       let $rowDiv = $('<div>');
       $rowDiv.addClass('row');
       $rowDiv.addClass('plannerRow');
       $rowDiv.attr('hour-index',hour);
     
-      // Start building Time box portion of row
+      // Build time column 
       let $col2TimeDiv = $('<div>');
       $col2TimeDiv.addClass('col-md-2 hour');
-
-      // create timeBox element (contains time)
       const $timeBoxSpn = $('<span>');
-      // can use this to get value
       $timeBoxSpn.attr('class','time-block');
 
-      // format hours for display
+      // Adjust for PM hours
       let displayHour = 0;
       let ampm = "";
       if (hour > 12) { 
@@ -58,15 +52,13 @@ $(document).ready(function() {
         ampm = "am";
       }
       
-      // populate timeBox with time
+      // populate time
       $timeBoxSpn.text(`${displayHour} ${ampm}`);
 
-      // insert into col inset into timebox
+      // insert into time column
       $rowDiv.append($col2TimeDiv);
       $col2TimeDiv.append($timeBoxSpn);
 
-      // STOP building Time box portion of row
-  
       // START building input portion of row
       // build row components
       let $dailyPlanSpn = $('<input>');
@@ -106,7 +98,7 @@ $(document).ready(function() {
       updateRowColor($rowDiv, hour);
       
       // add row to planner container
-      $plannerDiv.append($rowDiv);
+      $workScheduleDiv.append($rowDiv);
     };
   
     // function to update row color

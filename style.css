@@ -1,3 +1,4 @@
+/* Main styling */
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
@@ -11,6 +12,7 @@ textarea{
   border-left: 1px solid black;
   padding: 10px;
 }
+/* Header */
 .jumbotron {
   text-align: center;
   background-color: transparent;
@@ -18,6 +20,7 @@ textarea{
   border-radius: 0;
   border-bottom: 10px solid black;
 }
+/* Bootstrap Column padding override */
 .col-md-1, .col-md-2, .col-md-9 {
   padding: 0;
 }
@@ -25,6 +28,7 @@ textarea{
   white-space: pre-wrap;
 }
 
+/* Time Column */
 .time-block{
   background-color: linen;  
   color: black;
@@ -32,21 +36,23 @@ textarea{
   width: 100%;
   top: 50%;
   text-align: center;
+  vertical-align: middle;
   border-radius: 15px 0px 0px 15px;
   display: inline-block;
   font-size: 1em;
 }
 
-/* style container with daily plan text */
+/* Text Column */
 .dailyText {
   color: black;
   background-color:transparent; 
   font-size: 12pt;
   height:100%;
   width: 100%;
+  padding: 10px;
   border: none;
 }
-
+/* Overall row styling */
 .row {
   border-radius: 10px;
   white-space: pre-wrap;
@@ -57,28 +63,25 @@ textarea{
   font-size: 1em;
   line-height: 1.5;
 }
-
 .hour {
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
 }
-
+/* Row colors based upon time of day */
 .past {
   background-color: #d3d3d3;
   color: white;
 }
-
 .present {
   background-color: #ff6961;
   color: white;
 }
-
 .future {
   background-color: #77dd77;
   color: white;
 }
-
+/* Save column styling */
 .saveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
@@ -91,7 +94,6 @@ textarea{
   transition: all .3s ease-in-out;
   cursor: pointer;
 }
-
 .saveIcon {
   background-color: darkturquoise;
   color: gray;
@@ -105,3 +107,17 @@ textarea{
   font-size: 20px;
   transition: all .3s ease-in-out;
 }
+.emphIcon {
+  background-color: darkturquoise;
+  color: red;
+  border-radius: 0px 15px 15px 0px;
+  font-size: 1.5em;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.emphIcon i:hover {
+  font-size: 20px;
+  transition: all .3s ease-in-out;
+}
+

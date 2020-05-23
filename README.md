@@ -1,4 +1,4 @@
-# 05 Third-Party APIs: Work Day Scheduler
+# Work Day Scheduler
 
 I created a simple calendar application that allows the user to save events for each hour of the day. This app runs in the browser and features dynamically updated HTML and CSS powered by jQuery.
 
@@ -33,16 +33,3 @@ THEN the saved events persist
 The following animation demonstrates the application functionality:
 
 ![day planner demo](./Assets/TannerToolImage.PNG)
-
-## Deliverables
-
-The following deliverables were provided.
-
-* The URL of the deployed application.
-
-* The URL of the GitHub repository with a unique name
-
-* README describing the project.
-
-- - -
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.

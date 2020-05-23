@@ -4,6 +4,8 @@ I created a simple calendar application that allows the user to save events for 
 
 The code uses the [Moment.js](https://momentjs.com/) library to work with date and time.
 
+https://ttanner44.github.io/WorkDayScheduler/
+
 ## User Story
 
 ```
